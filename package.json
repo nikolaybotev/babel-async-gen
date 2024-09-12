@@ -3,7 +3,8 @@
     "@babel/cli": "^7.25.6",
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
-    "core-js": "^3.38.1"
+    "core-js": "^3.38.1",
+    "typescript": "^5.6.2"
   },
   "scripts": {
     "build": "for f in *.js; do [[ $f != *.transpiled.js ]] && babel $f --out-file ${f%.*}.transpiled.js; done"

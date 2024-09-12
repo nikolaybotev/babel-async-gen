@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "checkJs": false,
+    "inlineSourceMap": true,
+    "module": "NodeNext",
+    "noEmit": true,
+    "noImplicitThis": true,
+    "noUncheckedSideEffectImports": true,
+    "preserveConstEnums": true,
+    "strictBindCallApply": true,
+    "strictBuiltinIteratorReturn": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "target": "ESNext",
+    "outDir": "."
+  },
+  "include": ["*.js", "*.ts"],
+  "exclude": ["**/*.transpiled.js", "node_modules"]
+}
