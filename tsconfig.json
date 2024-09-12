@@ -2,12 +2,12 @@
   "compilerOptions": {
     "allowJs": true,
     "alwaysStrict": true,
-    "checkJs": false,
+    "checkJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSourceMap": true,
     "module": "NodeNext",
-    "noEmit": true,
+    "noEmit": false,
     "noImplicitThis": true,
     "noUncheckedSideEffectImports": true,
     "preserveConstEnums": true,
@@ -17,8 +17,8 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
-    "target": "ESNext",
-    "outDir": "."
+    "target": "ES5",
+    "outDir": "ts"
   },
   "include": ["*.js", "*.ts"],
   "exclude": ["**/*.transpiled.js", "node_modules"]
