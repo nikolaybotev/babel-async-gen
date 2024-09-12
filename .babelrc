@@ -4,7 +4,7 @@
       "@babel/preset-env",
       {
         "targets": {
-          "node": "current" // or specify your target environment
+          "node": "4" // or specify your target environment
         }
       }
     ]
