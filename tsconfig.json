@@ -11,7 +11,7 @@
     "noImplicitThis": true,
     "noUncheckedSideEffectImports": true,
     "preserveConstEnums": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "strictBindCallApply": true,
     "strictBuiltinIteratorReturn": true,
     "strictNullChecks": true,
