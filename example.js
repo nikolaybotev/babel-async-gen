@@ -31,7 +31,7 @@ console.log("generator proto", myGenerator.__proto__);
 console.log("generator proto.proto", myGenerator.__proto__.__proto__);
 console.log("generator proto.proto.proto", myGenerator.__proto__.__proto__.__proto__);
 console.log("generator proto.proto.proto.proto", myGenerator.__proto__.__proto__.__proto__.__proto__);
-console.log("generator proto.proto.proto.proto", myGenerator.__proto__.__proto__.__proto__.__proto__.__proto__);
+console.log("generator proto.proto.proto.proto.proto", myGenerator.__proto__.__proto__.__proto__.__proto__.__proto__);
 console.log("array.values() proto", [].values().__proto__);
 console.log("array.values() proto.proto", [].values().__proto__.__proto__);
 console.log("array.values() proto.proto.proto", [].values().__proto__.__proto__.__proto__);
