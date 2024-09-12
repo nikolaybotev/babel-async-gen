@@ -21,5 +21,5 @@
     "outDir": "ts"
   },
   "include": ["*.js", "*.ts"],
-  "exclude": ["**/*.transpiled.js", "node_modules"]
+  "exclude": ["**/*.transpiled.js", "**/*.swc.js", "node_modules"]
 }
