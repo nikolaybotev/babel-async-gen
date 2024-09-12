@@ -3,11 +3,15 @@
     [
       "@babel/preset-env",
       {
+        "useBuiltIns": "usage", // "entry" or "usage"
+        "corejs": 3, // Specify the version of core-js
         "targets": {
-          "node": "4" // or specify your target environment
+          "node": "4", // or specify your target environment
+          "browsers": ["> 0.25%, not dead"] // Specify your target browsers
         }
       }
     ]
-  ]
+  ],
+  "sourceMaps": "inline" // Enable inline source maps
 }
 

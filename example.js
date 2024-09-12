@@ -1,3 +1,5 @@
+import "core-js/actual";
+
 async function* asyncGenerator() {
   yield 1;
   yield 2;
@@ -5,12 +7,13 @@ async function* asyncGenerator() {
 }
 
 async function main() {
-  for await (const x of asyncGenerator()) {
+  console.log([1, 20, 30].values().drop(1).toArray().join(","));
+  for await (const x of AsyncIterator.from(asyncGenerator()).drop(1)) {
     console.log(x);
   }
 }
 
-main().then(() => console.log("done"));
+main().then(() => console.log("done!"));
 
 const gen = asyncGenerator();
 
