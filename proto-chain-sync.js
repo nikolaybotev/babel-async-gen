@@ -15,6 +15,9 @@ var iteratorPrototype = generatorPrototype ? Object.getPrototypeOf(generatorProt
 var objectPrototype = iteratorPrototype ? Object.getPrototypeOf(iteratorPrototype) : null
 var theEnd = objectPrototype ? Object.getPrototypeOf(objectPrototype) : null
 
+console.log("foo.prototype.constructor === foo", foo.prototype.constructor === foo)
+console.log("foo().__proto__ === foo.prototype", foo().__proto__ === foo.prototype)
+console.log("foo() instanceof foo", foo() instanceof foo)
 console.log("fooPrototype - Generator =>", trace(fooPrototype))
 console.log("generatorPrototype - GeneratorPrototype =>", trace(generatorPrototype))
 console.log("iteratorPrototype - IteratorPrototype =>", trace(iteratorPrototype))
