@@ -7,7 +7,7 @@ function trace(obj) {
   return Object.getOwnPropertyNames(obj).join(",") + "," + Object.getOwnPropertySymbols(obj).map(x => x.toString()).join(",")
 }
 
-function *foo() {}
+function* foo() {}
 
 var fooPrototype = Object.getPrototypeOf(foo())
 var generatorPrototype = Object.getPrototypeOf(fooPrototype)
