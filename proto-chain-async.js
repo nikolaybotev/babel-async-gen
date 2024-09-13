@@ -1,11 +1,7 @@
 var runtime = require("regenerator-runtime")
 
-function trace(obj) {
-  if (!obj) {
-    return "null"
-  }
-  return Object.getOwnPropertyNames(obj).join(",") + "," + Object.getOwnPropertySymbols(obj).map(x => x.toString()).join(",")
-}
+const trace = (obj, j = "\n") => obj&&[Object.getOwnPropertyNames(obj),Object.getOwnPropertySymbols(obj).map(x=>x.toString())].flatMap(_=>_).join(j);
+
 
 async function *foo() { yield 42 }
 async function *bar() { yield "hi" }

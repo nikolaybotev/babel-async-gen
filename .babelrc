@@ -4,11 +4,12 @@
       "@babel/preset-env",
       {
         "useBuiltIns": "usage", // "entry" or "usage"
-        "corejs": 3, // Specify the version of core-js
+        "corejs": "3.38.1", // Specify the version of core-js
         "targets": {
-          "node": "0.10", // or specify your target environment
-          "browsers": ["> 0.25%, not dead"] // Specify your target browsers
-        }
+          "node": "8" // or specify your target environment
+          //"browsers": ["> 0.25%, not dead"] // Specify your target browsers
+        },
+        "debug": true
       }
     ],
     "@babel/preset-typescript"
