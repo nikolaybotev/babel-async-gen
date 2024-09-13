@@ -6,7 +6,7 @@
         "useBuiltIns": "usage", // "entry" or "usage"
         "corejs": "3.38.1", // Specify the version of core-js
         "targets": {
-          "node": "8" // or specify your target environment
+          "node": "0.10" // or specify your target environment
           //"browsers": ["> 0.25%, not dead"] // Specify your target browsers
         },
         "debug": true
