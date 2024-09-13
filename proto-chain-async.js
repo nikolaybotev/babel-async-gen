@@ -1,6 +1,6 @@
 var runtime = require("regenerator-runtime")
 
-const trace = (obj, j = "\n") => obj&&[Object.getOwnPropertyNames(obj),Object.getOwnPropertySymbols(obj).map(x=>x.toString())].flatMap(_=>_).join(j);
+const trace = (obj, j = ",") => obj&&[Object.getOwnPropertyNames(obj),Object.getOwnPropertySymbols(obj).map(x=>x.toString())].flatMap(_=>_).join(j);
 
 
 async function *foo() { yield 42 }
@@ -13,11 +13,6 @@ var asyncIteratorPrototype = Object.getPrototypeOf(asyncGeneratorPrototype)
 var objectPrototype = asyncIteratorPrototype ? Object.getPrototypeOf(asyncIteratorPrototype) : null
 var theEnd = objectPrototype ? Object.getPrototypeOf(objectPrototype) : null
 
-console.log("AsyncIterator =>", runtime.AsyncIterator)
-console.log("AsyncIterator.prototype =>", runtime.AsyncIterator.prototype)
-console.log();
-
-console.log("foo.prototype.constructor === foo", foo.prototype.constructor === foo)
 console.log("foo().__proto__ === foo.prototype", foo().__proto__ === foo.prototype)
 console.log("foo() instanceof foo", foo() instanceof foo)
 console.log("fooPrototype =>", trace(fooPrototype), fooPrototype === runtime.AsyncIterator.prototype)

@@ -9,7 +9,8 @@
           "node": "0.10" // or specify your target environment
           //"browsers": ["> 0.25%, not dead"] // Specify your target browsers
         },
-        "debug": true
+        "debug": true,
+        "exclude": ["proposal-async-generator-functions"]
       }
     ],
     "@babel/preset-typescript"
