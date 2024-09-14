@@ -11,7 +11,7 @@
         },
         "debug": true,
         "exclude": [
-          "proposal-async-generator-functions"
+          //"proposal-async-generator-functions"
         ]
       }
     ],

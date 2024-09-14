@@ -1,5 +1,6 @@
 var IteratorPrototype = Object.getPrototypeOf(Object.getPrototypeOf([].values()));
 console.log("POLYFILLED ITERATOR 2", IteratorPrototype, IteratorPrototype.constructor);
+require("core-js/actual/global-this");
 require("core-js/proposals/iterator-helpers-stage-3-2");
 console.log("POLYFILLED ITERATOR 3", IteratorPrototype, IteratorPrototype.constructor);
 
@@ -33,7 +34,7 @@ console.log("iteratorPrototype - IteratorPrototype =>", trace(iteratorPrototype)
 console.log("objectPrototype => ", objectPrototype)
 console.log("null => ", theEnd)
 
-//const Iterator = iteratorPrototype.constructor
+if (!globalThis.Iterator) globalThis.Iterator = iteratorPrototype.constructor;
 // Add an iterator helper
 Iterator.prototype.helper = function() { console.log("HELPER") }
 

@@ -3,8 +3,8 @@ var runtime = require("regenerator-runtime")
 const trace = (obj, j = ",") => obj&&[Object.getOwnPropertyNames(obj),Object.getOwnPropertySymbols(obj).map(x=>x.toString())].flatMap(_=>_).join(j);
 
 
-async function *foo() { yield 42 }
-async function *bar() { yield "hi" }
+async function *foo() { yield 42; for (let i = 0; i < 3; i++) { yield i * 10 }; yield* bar(); }
+async function *bar() { yield "hi", yield "there" }
 
 var fooPrototype = Object.getPrototypeOf(foo())
 var barPrototype = Object.getPrototypeOf(bar())
@@ -20,4 +20,10 @@ console.log("barPrototype =>", trace(barPrototype), barPrototype === fooPrototyp
 console.log("asyncGeneratorPrototype =>", trace(asyncGeneratorPrototype), asyncGeneratorPrototype === runtime.AsyncIterator.prototype, asyncGeneratorPrototype === Object.prototype)
 console.log("asyncIteratorPrototype =>", trace(asyncIteratorPrototype), asyncIteratorPrototype === runtime.AsyncIterator.prototype)
 console.log(objectPrototype)
-console.log(theEnd)
+console.log(theEnd);
+
+(async function test() {
+  for await (const n of foo()) {
+    console.log(n);
+  }
+})().then(() => console.log("DONE"));
