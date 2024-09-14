@@ -16,6 +16,7 @@ var objectPrototype = iteratorPrototype ? Object.getPrototypeOf(iteratorPrototyp
 var theEnd = objectPrototype ? Object.getPrototypeOf(objectPrototype) : null
 
 console.log("Iterator.prototype.constructor === (Object?)", iteratorPrototype.constructor, iteratorPrototype.constructor === Object)
+console.log("foo.prototype.__proto__.__proto__ === [].values().__proto__.__proto__", iteratorPrototype === [].values().__proto__.__proto__)
 console.log("foo.__proto__.prototype === foo().__proto__.__proto__", foo.__proto__.prototype === foo().__proto__.__proto__)
 console.log("foo.prototype.constructor === foo.__proto__", foo.prototype.constructor === foo.__proto__)
 console.log("foo.prototype.constructor === foo", foo.prototype.constructor === foo)
@@ -26,3 +27,19 @@ console.log("generatorPrototype - GeneratorPrototype =>", trace(generatorPrototy
 console.log("iteratorPrototype - IteratorPrototype =>", trace(iteratorPrototype))
 console.log(objectPrototype)
 console.log(theEnd)
+
+const Iterator = iteratorPrototype.constructor
+// Add an iterator helper
+Iterator.prototype.forEach = function() { /* ... */ }
+
+// Make a custom Iterator class
+class RepeatIterator extends Iterator { next() { return { value: 42 } } }
+
+// The iterator helper is available here!
+new RepeatIterator().forEach();
+
+for (const n of new RepeatIterator()) {
+  console.log(n);
+  break;
+}
+// prints 42
