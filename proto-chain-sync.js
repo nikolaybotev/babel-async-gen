@@ -1,6 +1,6 @@
 var IteratorPrototype = Object.getPrototypeOf(Object.getPrototypeOf([].values()));
 console.log("POLYFILLED ITERATOR 2", IteratorPrototype, IteratorPrototype.constructor);
-require("core-js/proposals/iterator-helpers");
+require("core-js/proposals/iterator-helpers-stage-3-2");
 console.log("POLYFILLED ITERATOR 3", IteratorPrototype, IteratorPrototype.constructor);
 
 function trace(obj) {
