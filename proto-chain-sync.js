@@ -18,6 +18,7 @@ var iteratorPrototype = generatorPrototype ? Object.getPrototypeOf(generatorProt
 var objectPrototype = iteratorPrototype ? Object.getPrototypeOf(iteratorPrototype) : null
 var theEnd = objectPrototype ? Object.getPrototypeOf(objectPrototype) : null
 
+console.log("[].values() proto === function*(){}() proto => ", IteratorPrototype === iteratorPrototype);
 console.log("Iterator.prototype.constructor === (Object?) => ", iteratorPrototype.constructor === Object, iteratorPrototype.constructor)
 //console.log("foo.prototype.__proto__.__proto__ === [].values().__proto__.__proto__ => ", iteratorPrototype === [].values().__proto__.__proto__)
 console.log("foo.__proto__.prototype === foo().__proto__.__proto__ => ", foo.__proto__.prototype === foo().__proto__.__proto__)
