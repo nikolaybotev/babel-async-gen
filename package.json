@@ -8,8 +8,10 @@
     "@swc/core": "^1.7.26",
     "core-js": "^3.38.1",
     "esbuild": "^0.23.1",
+    "streams": "^2.0.0",
     "typescript": "^5.6.2"
   },
+  "type": "module",
   "scripts": {
     "build": "for f in *.js *.ts; do [[ $f != *.transpiled.js ]] && babel $f --out-file ${f%.*}.transpiled.js; done"
   }
