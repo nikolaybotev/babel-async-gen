@@ -4,7 +4,7 @@ const trace = (obj, j = ",") => obj&&[Object.getOwnPropertyNames(obj),Object.get
 
 
 async function *foo() { yield 42; for (let i = 0; i < 3; i++) { yield i * 10 }; yield* bar(); }
-async function *bar() { yield "hi", yield "there" }
+async function *bar(a, b, c, d, ...e) { yield "hi", yield "there", yield a, yield b, yield c, yield d, yield e }
 
 var fooPrototype = Object.getPrototypeOf(foo())
 var barPrototype = Object.getPrototypeOf(bar())
