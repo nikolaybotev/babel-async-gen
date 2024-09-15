@@ -1,4 +1,4 @@
-import "core-js/actual";
+import "core-js/actual/index.js";
 
 console.log("drop() on array.values(): ", [].values().drop);
 const x: IteratorObject<string> = ["a", "b", "C"].values();
