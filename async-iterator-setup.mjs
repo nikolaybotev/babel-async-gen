@@ -1,3 +1,4 @@
+import "core-js/actual/object/set-prototype-of";
 const asyncGeneratorInstancePrototype = Object.getPrototypeOf(async function*(){}());
 const AsyncGeneratorPrototype = Object.getPrototypeOf(asyncGeneratorInstancePrototype);
 let AsyncIteratorPrototype;

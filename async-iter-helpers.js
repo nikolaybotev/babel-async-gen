@@ -1,7 +1,12 @@
 require("./async-iterator-setup.cjs");
-require("core-js/proposals/async-iterator-helpers.js");
+
+require("core-js/actual/promise");
+require("core-js/actual/symbol");
+require("core-js/actual/async-iterator/drop");
+require("core-js/actual/async-iterator/take");
+require("core-js/actual/async-iterator/filter");
+require("core-js/actual/async-iterator/map");
 require("streams/factories/async-iterator.js");
-console.log("STARTING");
 
 async function* gen() {
   yield* [1, 2, 3, 4, 5];

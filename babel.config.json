@@ -1,0 +1,28 @@
+{
+  "babelrc": false,
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "commonjs",
+        "targets": {
+          "node": "0.10" // or specify your target environment
+        },
+        "debug": true
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": false,
+        "helpers": true,
+        "regenerator": true
+      }
+    ]
+  ],
+  "sourceMaps": "inline" // Enable inline source maps
+}
