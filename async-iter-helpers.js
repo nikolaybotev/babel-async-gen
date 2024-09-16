@@ -1,6 +1,7 @@
 require("./async-iterator-setup.cjs");
 require("core-js/proposals/async-iterator-helpers.js");
-require("streams/factories/index.js");
+require("streams/factories/async-iterator.js");
+console.log("STARTING");
 
 async function* gen() {
   yield* [1, 2, 3, 4, 5];
@@ -14,3 +15,4 @@ gen()
   .stream()
   .batch(2)
   .forEach(n => console.log(n));
+console.log("Hello world");
