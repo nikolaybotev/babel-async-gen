@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   entry: "./async-iter-helpers.js", // Entry point
   output: {
-    filename: "bundle.js", // Output bundle file
+    filename: "bundle-min.js", // Output bundle file
     path: path.resolve(__dirname, "dist"), // Output directory
   },
   mode: "production", // Set the mode to development
