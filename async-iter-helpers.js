@@ -1,20 +1,6 @@
-//import configurator from "core-js/configurator.js";
-{
-  const asyncGeneratorInstancePrototype = Object.getPrototypeOf(async function*(){}());
-  const AsyncGeneratorPrototype = Object.getPrototypeOf(asyncGeneratorInstancePrototype);
-  let AsyncIteratorPrototype;
-  if (AsyncGeneratorPrototype === Object.prototype) {
-    // Fix-up for babel's transform-async-generator-functions
-    console.log("FIXUP");
-    AsyncIteratorPrototype = {};
-    Object.setPrototypeOf(asyncGeneratorInstancePrototype, AsyncIteratorPrototype);
-  } else {
-    AsyncIteratorPrototype = Object.getPrototypeOf(AsyncGeneratorPrototype);
-  }
-  (await import("core-js/configurator.js")).default({ AsyncIteratorPrototype });
-}
-await import("core-js/proposals/async-iterator-helpers.js");
-import "streams/factories/index.js";
+require("./async-iterator-setup.cjs");
+require("core-js/proposals/async-iterator-helpers.js");
+require("streams/factories/index.js");
 
 async function* gen() {
   yield* [1, 2, 3, 4, 5];
